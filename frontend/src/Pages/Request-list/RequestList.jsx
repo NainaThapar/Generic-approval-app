@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const people = [
   {
     name: "Leslie Alexander",
@@ -11,7 +13,10 @@ const people = [
 
 export default function RequestList() {
   return (
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+    <NavLink
+      className="grid grid-cols-1 gap-4 sm:grid-cols-2"
+      to="/request-review"
+    >
       {people.map((person) => (
         <div
           key={person.email}
@@ -33,6 +38,6 @@ export default function RequestList() {
           </div>
         </div>
       ))}
-    </div>
+    </NavLink>
   );
 }
